@@ -24,10 +24,13 @@ derive from the current implementation's source code by yourself.
 - Saves files to the server’s filesystem
 
 ## Installation
-Add it via JSR.
-```
+
+Add it via JSR:
+
+```ts
 deno add jsr:@vzlatin/file-lift
 ```
+
 ## Usage
 
 ### 1. Initialize the `FileUploader` Class
