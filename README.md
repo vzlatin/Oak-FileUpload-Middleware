@@ -24,14 +24,10 @@ derive from the current implementation's source code by yourself.
 - Saves files to the server’s filesystem
 
 ## Installation
-
-To use `FileUploader`, you need to install it in your Deno project. Add the
-following import statement to your code:
-
-```ts
-import { FileUploader } from "path/to/FileUploader.ts";
+Add it via JSR.
 ```
-
+deno add jsr:@vzlatin/file-lift
+```
 ## Usage
 
 ### 1. Initialize the `FileUploader` Class
