@@ -240,8 +240,16 @@ export class FileUploader {
       }
 
       if (this.options.saveFile) {
-        processedFile.uri = await this.saveFileToDisk(file);
-        processedFile.url = encodeURI(processedFile.uri);
+        const savedFilePath = await this.saveFileToDisk(file);
+        processedFile.uri = savedFilePath;
+        processedFile.url = savedFilePath.replace(Deno.cwd(), "").replace(
+          /\\/g,
+          "/",
+        );
+        if (!processedFile.url.startsWith("/")) {
+          processedFile.url = "/" + processedFile.url;
+        }
+        processedFile.url = encodeURI(processedFile.url);
       } else {
         const tempUploadsDir = join(Deno.cwd(), "temp_uploads");
         const tempFilePath = join(
